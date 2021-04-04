@@ -78,6 +78,10 @@
         <Container class="javax.swing.JInternalFrame" name="jInternalFrame1">
           <Properties>
             <Property name="title" type="java.lang.String" value="Enter Status to View the Best FYP Awarded certificate"/>
+            <Property name="frameIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Mid_Project/images/icons8_login_64px.png"/>
+            </Property>
+            <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
             <Property name="visible" type="boolean" value="true"/>
           </Properties>
 

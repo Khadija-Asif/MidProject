@@ -38,6 +38,8 @@ public class Certificate extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(240, 248, 250));
 
         jInternalFrame1.setTitle("Enter Status to View the Best FYP Awarded certificate");
+        jInternalFrame1.setFrameIcon(new javax.swing.ImageIcon(getClass().getResource("/Mid_Project/images/icons8_login_64px.png"))); // NOI18N
+        jInternalFrame1.setVerifyInputWhenFocusTarget(false);
         jInternalFrame1.setVisible(true);
 
         javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
