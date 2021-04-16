@@ -5,6 +5,8 @@
  */
 package Mid_Project;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author KHADIJA
@@ -16,11 +18,39 @@ public class JFrameEvaluation extends javax.swing.JFrame {
      */
     public JFrameEvaluation() {
         initComponents();
+        FypRubrics R = new FypRubrics();
+        R.setProposalRubrics("Clarity Problem Statement");
+        R.setDissertationRubrics("Results and Conclusion");
+        R.setLogBookRubrics("Involvement in Project Evaluation");
+        R.setWorkshopRubrics("Participation in breifings");
+        R.setPresentationRubrics("Data Interpretation and analysis");
+        R.setOutputRubrics("Project Outputs in the given timeline");
+        Cm.rubricsList.add(R);
+        FixedRubricsTable();
+
     }
-    
-   //kia nahi ho rha git mn jo push krna tha comit etc etc ye red lines q arae ?? 
-    // ya git mn red lines? g g in ki
-    //abhi hum na three lines likhi hain in ko krta hain
+
+    public void FixedRubricsTable() {
+
+        for (int i = 0; i < Cm.rubricsList.size(); i++) {
+            String data[] = {Cm.getRubricsList().get(i).getProposalRubrics(), Cm.getRubricsList().get(i).getOutputRubrics(),
+                Cm.rubricsList.get(i).getDissertationRubrics(), Cm.getRubricsList().get(i).getDissertationRubrics(),
+                Cm.getRubricsList().get(i).getPresentationRubric(), Cm.rubricsList.get(i).getLogBookRubrics(),
+                Cm.rubricsList.get(i).getWorkshopRubrics()};
+            DefaultTableModel tblModel = (DefaultTableModel) jTable3.getModel();
+            Object rowData[] = new Object[6];
+            rowData[0] = Cm.getRubricsList().get(i).getProposalRubrics();
+            rowData[1] = Cm.getRubricsList().get(i).getOutputRubrics();
+            rowData[2] = Cm.getRubricsList().get(i).getDissertationRubrics();
+            rowData[3] = Cm.getRubricsList().get(i).getPresentationRubric();
+            rowData[4] = Cm.getRubricsList().get(i).getLogBookRubrics();
+            rowData[5] = Cm.getRubricsList().get(i).getWorkshopRubrics();
+            tblModel.setNumRows(i);
+            tblModel.addRow(rowData);
+
+        }
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -30,54 +60,64 @@ public class JFrameEvaluation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
+
+        jButton1.setText("jButton1");
+
+        jButton2.setText("jButton2");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
+        setResizable(false);
 
         jTabbedPane1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
         jPanel1.setBackground(new java.awt.Color(240, 248, 250));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jPanel3.setBackground(new java.awt.Color(240, 248, 250));
+        jPanel3.setBackground(new java.awt.Color(50, 13, 62));
 
         jTable2.setBackground(new java.awt.Color(240, 248, 250));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Project Title", "Grade", "Problem Statement and Analysis", "Effort", "Evaluation and Conclusion", "Remark"
             }
         ));
+        jTable2.setRowHeight(50);
         jScrollPane2.setViewportView(jTable2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1229, Short.MAX_VALUE)
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1240, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 368, Short.MAX_VALUE))
+                .addGap(0, 389, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -86,34 +126,30 @@ public class JFrameEvaluation extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("FYP (Final Year Project) Record", jPanel1);
 
-        jPanel2.setBackground(new java.awt.Color(240, 248, 250));
+        jPanel2.setBackground(new java.awt.Color(50, 13, 62));
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jTable1.setBackground(new java.awt.Color(240, 248, 250));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "Proposal (10%)", "Project Output (30%)", "Project Dissertation (35%)", "Presentation (15%)", "Log Book (5%)", "Workshop (5%)"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane3.setViewportView(jTable3);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1229, Short.MAX_VALUE)
+            .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1240, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 336, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 381, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Rubrics", jPanel2);
@@ -130,53 +166,21 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameEvaluation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameEvaluation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameEvaluation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameEvaluation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrameEvaluation().setVisible(true);
-            }
-        });
-    }
-
+    CommitteeManagement Cm = CommitteeManagement.getInstance();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     // End of variables declaration//GEN-END:variables
+
 }
-
-
