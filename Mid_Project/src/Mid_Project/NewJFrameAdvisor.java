@@ -144,8 +144,8 @@ public class NewJFrameAdvisor extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         String GId = ID.getText();
-        for (int i = 0; i < Cm.list.size(); i++) {
-            Student std = (Student) Cm.getList().get(i);
+        for (int i = 0; i < Cm.stdlist.size(); i++) {
+            Student std = (Student)Cm.getStdList().get(i);
             if (GId.equals(std.getCroupID())) {
                 JFrameAdvisor j = new JFrameAdvisor();
                 j.setVisible(true);

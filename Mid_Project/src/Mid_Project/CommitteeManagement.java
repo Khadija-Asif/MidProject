@@ -19,6 +19,7 @@ public class CommitteeManagement {
     public static ArrayList<BasicInfo> stdlist = new ArrayList<BasicInfo>();
     public static ArrayList<Project> list1 = new ArrayList<Project>();
     public static ArrayList<FypRubrics> rubricsList = new ArrayList<FypRubrics>();
+    public static ArrayList<FypEvaluation> evaluationList = new ArrayList<FypEvaluation>();
     private static CommitteeManagement smpl;
 
     private CommitteeManagement() {
@@ -46,7 +47,8 @@ public class CommitteeManagement {
     }
 
     public void addProject(Project project) {
-        project.setterProject(project.getprojectTitle(), project.getprojectType(), project.getProjectDescription(),project.getProjectAdvisor());
+        project.setterProject(project.getprojectTitle(), project.getprojectType(),
+                project.getProjectDescription(), project.getProjectAdvisor());
         list1.add(project);
     }
 
@@ -65,9 +67,23 @@ public class CommitteeManagement {
     public List<FypRubrics> getRubricsList() {
         return rubricsList;
     }
-
+     
+    public List<FypEvaluation> getEvaluations()
+    {
+        return this.evaluationList;
+    }
+    
     public void addFypMembers(BasicInfo B) {
         stdlist.add(B);
+
+    }
+
+    public void EvaluateFyp(FypEvaluation Fyp) {
+
+        Fyp.setter(Fyp.getPresentationMark(), Fyp.getProposalMark(), Fyp.getOutputMarks(),
+                Fyp.getProjectDissertationMark(), Fyp.getProjectLogBookMark(), Fyp.getProjectWorkshopMark());
+        evaluationList.add(Fyp);
+        
 
     }
 

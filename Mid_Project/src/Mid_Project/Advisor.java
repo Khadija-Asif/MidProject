@@ -5,6 +5,8 @@
  */
 package Mid_Project;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author KHADIJA
@@ -13,6 +15,7 @@ public class Advisor extends BasicInfo {
 
     private String domain;
     private String workPlaceNumber;
+    
 
     /**
      * function to set domain
@@ -60,6 +63,7 @@ public class Advisor extends BasicInfo {
         this.domain = domain;
         this.workPlaceNumber = workNum;
     }
+
     /**
      * Function to get Class type
      *

@@ -238,4 +238,17 @@ public class FypEvaluation {
     public double getProjectWorkshopMark() {
         return this.projectWorkshop;
     }
+    public void setter(double marks1 , double marks2 , double marks3 , double marks4 , double marks5 , double marks6)
+    {
+        this.presentationMark = marks1;
+        this.proposalMark = marks2;
+        this.projectOutMark = marks3;
+        this.projectDissertationMark = marks4;
+        this.projectLogBookMark = marks5;
+        this.projectWorkshop = marks6;
+    }
+    public double setter()
+    {
+        return presentationMark + proposalMark + projectOutMark + projectDissertationMark + projectLogBookMark + projectWorkshop;
+    }
 }
