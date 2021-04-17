@@ -7,6 +7,7 @@ package Mid_Project;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import jdk.nashorn.internal.objects.Global;
 
 /**
  *
@@ -217,7 +218,7 @@ public class JFrameAdvisor extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Group Name", " Pesentation Marks (out of 15)", "Proposal (out of 10)", "Project Output out of (30)", "Project Dissertation (out of 35)", "Log Book (out of 5)", "Workshop(out of 5)"
+                "Group Name", " Pesentation Marks (out of 15)", "Proposal (out of 10)", "Project Output out of (30)", "Project Dissertation (out of 35)", "Log Book (out of 5)", "Workshop(out of 5)", "Total Makrs"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -275,9 +276,10 @@ public class JFrameAdvisor extends javax.swing.JFrame {
         String mark = J6.getText();
         double fypMark6 = Double.parseDouble(mark);
         fypMarks.setWorkshopMark(fypMark6);
+        fypMarks.setTotal(fypMark1 + fypMark2 + fypMark3 + fypMark4 + fypMark5 + fypMark6);
         Cm.EvaluateFyp(fypMarks);
         for (int i = 0; i < Cm.evaluationList.size(); i++) {
-            JOptionPane.showMessageDialog(this, Cm.getEvaluations().get(i).getPresentationMark() + Cm.getProjectList().get(0).getprojectTitle());
+            JOptionPane.showMessageDialog(this, Cm.getEvaluations().get(i).getTotal());
 
         }
         viewEvaluationTable();
@@ -293,13 +295,16 @@ public class JFrameAdvisor extends javax.swing.JFrame {
                 Cm.getEvaluations().get(i).getOutputMarks(), Cm.getEvaluations().get(i).getProjectDissertationMark(),
                 Cm.getEvaluations().get(i).getProjectLogBookMark(), Cm.getEvaluations().get(i).getProjectWorkshopMark()};
             DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-            Object rowData[] = new Object[6];
-            rowData[0] = Cm.getEvaluations().get(i).getPresentationMark();
-            rowData[1] = Cm.getEvaluations().get(i).getProposalMark();
-            rowData[2] = Cm.getEvaluations().get(i).getOutputMarks();
-            rowData[3] = Cm.getEvaluations().get(i).getProjectDissertationMark();
-            rowData[4] = Cm.getEvaluations().get(i).getProjectLogBookMark();
-            rowData[5] = Cm.getEvaluations().get(i).getProjectWorkshopMark();
+            
+            Object rowData[] = new Object[8];
+            //rowData[0] = ;
+            rowData[1] = Cm.getEvaluations().get(i).getPresentationMark();
+            rowData[2] = Cm.getEvaluations().get(i).getProposalMark();
+            rowData[3] = Cm.getEvaluations().get(i).getOutputMarks();
+            rowData[4] = Cm.getEvaluations().get(i).getProjectDissertationMark();
+            rowData[5] = Cm.getEvaluations().get(i).getProjectLogBookMark();
+            rowData[6] = Cm.getEvaluations().get(i).getProjectWorkshopMark();
+            rowData[7] = Cm.getEvaluations().get(i).getTotal();
             tblModel.setNumRows(i);
             tblModel.addRow(rowData);
 
@@ -310,9 +315,9 @@ public class JFrameAdvisor extends javax.swing.JFrame {
         j1.setText(null);
         j2.setText(null);
         j3.setText(null);
-        mark4.setText(null);
+        j4.setText(null);
         j5.setText(null);
-        mark6.setText(null);
+        J6.setText(null);
 
     }
     private void j5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j5ActionPerformed
@@ -345,102 +350,18 @@ public class JFrameAdvisor extends javax.swing.JFrame {
     private javax.swing.JTextField j4;
     private javax.swing.JTextField j5;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
-    private javax.swing.JLabel jLabel42;
-    private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField mark10;
-    private javax.swing.JTextField mark11;
-    private javax.swing.JTextField mark12;
-    private javax.swing.JTextField mark13;
-    private javax.swing.JTextField mark14;
-    private javax.swing.JTextField mark15;
-    private javax.swing.JTextField mark16;
-    private javax.swing.JTextField mark17;
-    private javax.swing.JTextField mark18;
-    private javax.swing.JTextField mark19;
-    private javax.swing.JTextField mark20;
-    private javax.swing.JTextField mark21;
-    private javax.swing.JTextField mark22;
-    private javax.swing.JTextField mark23;
-    private javax.swing.JTextField mark24;
-    private javax.swing.JTextField mark25;
-    private javax.swing.JTextField mark26;
-    private javax.swing.JTextField mark27;
-    private javax.swing.JTextField mark28;
-    private javax.swing.JTextField mark4;
-    private javax.swing.JTextField mark6;
-    private javax.swing.JTextField mark7;
-    private javax.swing.JTextField mark8;
-    private javax.swing.JTextField mark9;
-    private javax.swing.JTextField marks10;
-    private javax.swing.JTextField marks11;
-    private javax.swing.JTextField marks12;
-    private javax.swing.JTextField marks13;
-    private javax.swing.JTextField marks14;
-    private javax.swing.JTextField marks15;
-    private javax.swing.JTextField marks16;
-    private javax.swing.JTextField marks17;
-    private javax.swing.JTextField marks6;
-    private javax.swing.JTextField marks7;
-    private javax.swing.JTextField marks8;
-    private javax.swing.JTextField marks9;
     // End of variables declaration//GEN-END:variables
 }

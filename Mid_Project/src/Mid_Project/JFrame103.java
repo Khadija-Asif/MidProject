@@ -449,14 +449,14 @@ public class JFrame103 extends javax.swing.JFrame {
         P.setDescription(des.getText());
         P.setProjectAdvisor(jComboBox1.getSelectedItem().toString());
         for (int i = 0; i < Cm.list.size(); i++) {
-            if (jComboBox1.getSelectedItem().toString().equals(Cm.list.get(i).getEmailId())) {
+            if (jComboBox1.getSelectedItem().toString().equals(Cm.getList().get(i).getEmailId())) {
                 Cm.addProject(P);
                 JOptionPane.showMessageDialog(this, "added Successfully");
 
             }
         }
         for (int i = 0; i < Cm.list1.size(); i++) {
-            JOptionPane.showMessageDialog(this, Cm.getProjectList().get(0).getProjectAdvisor() + Cm.getList().get(0).getName());
+            JOptionPane.showMessageDialog(this, Cm.getProjectList().get(i).getProjectAdvisor() + Cm.getList().get(i).getName());
 
         }
         viewProjectTable();

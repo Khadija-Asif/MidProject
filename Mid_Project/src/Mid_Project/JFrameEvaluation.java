@@ -27,6 +27,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         R.setOutputRubrics("Project Outputs in the given timeline");
         Cm.rubricsList.add(R);
         FixedRubricsTable();
+        
 
     }
 
@@ -49,6 +50,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
             tblModel.addRow(rowData);
 
         }
+        
     }
 
     /**
@@ -70,6 +72,17 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        effort = new javax.swing.JTextArea();
+        jLabel4 = new javax.swing.JLabel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        remark = new javax.swing.JTextArea();
+        jButton3 = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        grade = new javax.swing.JTextField();
+        jPanel5 = new javax.swing.JPanel();
 
         jButton1.setText("jButton1");
 
@@ -92,7 +105,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Project Title", "Grade", "Problem Statement and Analysis", "Effort", "Evaluation and Conclusion", "Remark"
+                "Project Title", "Grade", "Effort", "Remark"
             }
         ));
         jTable2.setRowHeight(50);
@@ -108,7 +121,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 389, Short.MAX_VALUE))
+                .addGap(0, 396, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -149,10 +162,104 @@ public class JFrameEvaluation extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 381, Short.MAX_VALUE))
+                .addGap(0, 388, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("View Rubrics", jPanel2);
+
+        jPanel4.setBackground(new java.awt.Color(50, 13, 62));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Effort:");
+
+        effort.setColumns(20);
+        effort.setRows(5);
+        jScrollPane4.setViewportView(effort);
+
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Remark:");
+
+        remark.setColumns(20);
+        remark.setRows(5);
+        jScrollPane5.setViewportView(remark);
+
+        jButton3.setText("Save");
+        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Grade:");
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 235, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(119, 119, 119)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(grade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(484, 484, 484))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2)
+                        .addGap(40, 40, 40))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(78, 78, 78)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(30, 30, 30)))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(grade, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(48, 48, 48)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(50, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Add FYP (Final Year Project) Grade and Conclusion", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -169,18 +276,74 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        FypEvaluation F = new FypEvaluation();
+        for (int i = 0; i < Cm.evaluationList.size(); i++) {
+            if (Cm.getEvaluations().get(i).getTotal() >= 80 && Cm.getEvaluations().get(i).getTotal() <= 90) {
+                F.setGrade("A");
+            }
+            if (Cm.getEvaluations().get(i).getTotal() >= 70 && Cm.getEvaluations().get(i).getTotal() < 80) {
+                F.setGrade("B+");
+            }
+            if (Cm.getEvaluations().get(i).getTotal() >= 60 && Cm.getEvaluations().get(i).getTotal() < 70) {
+                F.setGrade("B- ");
+            }
+            if(Cm.getEvaluations().get(i).getTotal() >= 50 && Cm.getEvaluations().get(i).getTotal() < 60)
+            {
+                F.setGrade("B");
+            }
+        }
+        grade.setText(F.getGrade());
+        F.setEffort(effort.getText());
+        F.setRemark(remark.getText());
+        Cm.EvaluateFyp(F);
+        ViewEvaluationTable();
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+    public void ViewEvaluationTable()
+    {
+         for (int i = 0; i < Cm.evaluationList.size(); i++) {
+            String data[] = {Cm.getProjectList().get(i).getprojectTitle(),Cm.getEvaluations().get(i).getGrade()
+            ,Cm.getEvaluations().get(i).getEffort(),Cm.getEvaluations().get(i).getRemark()};
+            DefaultTableModel tblModel = (DefaultTableModel) jTable2.getModel();
+            Object rowData[] = new Object[4];
+            rowData[0] = Cm.getProjectList().get(i).getprojectTitle();
+            rowData[1] = Cm.getEvaluations().get(i).getGrade();
+            rowData[2] = Cm.getEvaluations().get(i).getEffort();
+            rowData[3] = Cm.getEvaluations().get(i).getRemark();
+           
+            tblModel.setNumRows(i);
+            tblModel.addRow(rowData);
+
+        }
+        
+    }
+        
+    
     CommitteeManagement Cm = CommitteeManagement.getInstance();
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea effort;
+    private javax.swing.JTextField grade;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
+    private javax.swing.JTextArea remark;
     // End of variables declaration//GEN-END:variables
 
 }

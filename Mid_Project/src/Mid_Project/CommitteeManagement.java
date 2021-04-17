@@ -5,9 +5,16 @@
  */
 package Mid_Project;
 
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Scanner;
 
 /**
  *
@@ -37,6 +44,7 @@ public class CommitteeManagement {
     public void add(BasicInfo B) {
         if (B.getType().equals("Advisor")) {
             list.add(B);
+            saveData(getList());
             System.out.println("Advisor");
         } else if (B.getType().equals("Student")) {
             stdlist.add(B);
@@ -56,6 +64,10 @@ public class CommitteeManagement {
         return list;
     }
 
+    public void setList(ArrayList<BasicInfo> list) {
+        list = this.list;
+    }
+
     public List<BasicInfo> getStdList() {
         return stdlist;
     }
@@ -67,12 +79,11 @@ public class CommitteeManagement {
     public List<FypRubrics> getRubricsList() {
         return rubricsList;
     }
-     
-    public List<FypEvaluation> getEvaluations()
-    {
+
+    public List<FypEvaluation> getEvaluations() {
         return this.evaluationList;
     }
-    
+
     public void addFypMembers(BasicInfo B) {
         stdlist.add(B);
 
@@ -81,14 +92,62 @@ public class CommitteeManagement {
     public void EvaluateFyp(FypEvaluation Fyp) {
 
         Fyp.setter(Fyp.getPresentationMark(), Fyp.getProposalMark(), Fyp.getOutputMarks(),
-                Fyp.getProjectDissertationMark(), Fyp.getProjectLogBookMark(), Fyp.getProjectWorkshopMark());
+                Fyp.getProjectDissertationMark(), Fyp.getProjectLogBookMark(), Fyp.getProjectWorkshopMark(), Fyp.getTotal());
         evaluationList.add(Fyp);
-        
 
     }
 
     public void addRubric(FypRubrics R) {
         rubricsList.add(R);
+    }
+
+    public boolean saveData(List<BasicInfo> list) {
+        boolean flag = false;
+        try {
+
+            FileWriter fr = new FileWriter("Advisor.txt");
+
+            for (int i = 0; i < list.size(); i++) {
+                Advisor Ad = (Advisor) list.get(i);
+                fr.write(Ad.getName() + "," + Ad.getEmailId() + "," + Ad.getDomain() + "," + Ad.getContactNumber() + "," + Ad.getWorkPlaceNumber() /*+","+ Ad.getPassword()*/+ "\n");
+                flag = true;
+            }
+            fr.close();
+
+        } catch (IOException ex) {
+            System.out.println("An error occured! File Not Found");
+            flag = false;
+        }
+
+        return flag;
+    }
+
+    public void loadData() {
+        try {
+
+            FileReader fr = new FileReader("Advisor.txt");
+            BufferedReader br = new BufferedReader(fr);
+            String inputFromFile = br.readLine();
+            for (int i = 0; inputFromFile != null; i++) {
+                String[] arr = inputFromFile.split(",");
+                Advisor Ad = new Advisor();
+                Ad.setName(arr[0]);
+                Ad.setEmailId(arr[1]);
+                Ad.setDomain(arr[2]);
+                Ad.setContactNumber(arr[3]);
+                Ad.setWorkPlaceNumber(arr[4]);
+//                Ad.setPassword(arr[5]);
+                //list.add(Ad);
+                inputFromFile = br.readLine();
+            }
+            br.close();
+            fr.close();
+
+        } catch (IOException ex) {
+            System.out.println("An error occurred.");
+
+        }
+
     }
 
 }

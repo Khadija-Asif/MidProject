@@ -5,6 +5,8 @@
  */
 package Mid_Project;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author KHADIJA
@@ -139,9 +141,15 @@ public class NewJFrame1 extends javax.swing.JFrame {
         String GroupID = ID.getText();
         for (int i = 0; i < Cm.stdlist.size(); i++) {
             Student std = (Student) Cm.getStdList().get(i);
+            int count = 0;
             if (GroupID.equals(std.getCroupID())) {
-                JFrameStudent1 f = new JFrameStudent1();
-                f.setVisible(true);
+                if (count < 1) {
+                    JFrameStudent1 f = new JFrameStudent1();
+                    f.setVisible(true);
+                    count = count + 1;
+                } else {
+                    JOptionPane.showMessageDialog(this, "Only 1 more Group Member is allowed");
+                }
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed

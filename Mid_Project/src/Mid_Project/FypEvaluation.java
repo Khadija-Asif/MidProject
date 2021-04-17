@@ -20,9 +20,8 @@ public class FypEvaluation {
     private String Grade;
     private String remark;
     private String Effort;
-    private String conclusion;
     private String Status;
-    private String problemAnalysis;
+    private double TotalMarks;
 
     /**
      * function to set proposal mark
@@ -110,9 +109,7 @@ public class FypEvaluation {
      *
      * @param concl
      */
-    public void setConclusion(String concl) {
-        this.conclusion = concl;
-    }
+
 
     /**
      * function to set status after Evaluation whether the project's result is
@@ -123,16 +120,6 @@ public class FypEvaluation {
     public void setStatus(String status) {
         this.Status = status;
     }
-
-    /**
-     * Function to set problem and analysis
-     *
-     * @param probAnalysis
-     */
-    public void setProblemAnalysis(String probAnalysis) {
-        this.problemAnalysis = probAnalysis;
-    }
-
     /**
      * function to get grades
      *
@@ -161,28 +148,12 @@ public class FypEvaluation {
     }
 
     /**
-     * @return
-     */
-    public String getConclusion() {
-        return this.conclusion;
-    }
-
-    /**
      * function to get Status
      *
      * @return
      */
     public String getStatus() {
         return this.Status;
-    }
-
-    /**
-     * getter function to easily access variable
-     *
-     * @return
-     */
-    public String getProblemAnalysis() {
-        return this.problemAnalysis;
     }
 
     /**
@@ -238,7 +209,7 @@ public class FypEvaluation {
     public double getProjectWorkshopMark() {
         return this.projectWorkshop;
     }
-    public void setter(double marks1 , double marks2 , double marks3 , double marks4 , double marks5 , double marks6)
+    public void setter(double marks1 , double marks2 , double marks3 , double marks4 , double marks5 , double marks6,double total)
     {
         this.presentationMark = marks1;
         this.proposalMark = marks2;
@@ -246,9 +217,18 @@ public class FypEvaluation {
         this.projectDissertationMark = marks4;
         this.projectLogBookMark = marks5;
         this.projectWorkshop = marks6;
+        this.TotalMarks = total;
     }
-    public double setter()
+    public void setTotal(double total)
     {
-        return presentationMark + proposalMark + projectOutMark + projectDissertationMark + projectLogBookMark + projectWorkshop;
+        this.TotalMarks = total;
+    }
+    public double getTotal()
+    {
+        return this.TotalMarks;
+    }
+    public double getter()
+    {
+        return this.presentationMark + this.proposalMark + this.projectOutMark + this.projectDissertationMark + this.projectLogBookMark + this.projectWorkshop + this.TotalMarks;
     }
 }

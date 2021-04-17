@@ -22,6 +22,7 @@ public class JFrame101 extends javax.swing.JFrame {
      */
     public JFrame101() {
         initComponents();
+        List.loadData();
     }
 
     /**
@@ -414,7 +415,7 @@ public class JFrame101 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
         );
 
         pack();
@@ -453,7 +454,7 @@ public class JFrame101 extends javax.swing.JFrame {
         }
 
         for (int i = 0; i < List.list.size(); i++) {
-            System.out.println(List.getList().get(0));
+            System.out.println(List.getList().get(i));
 
         }
         JOptionPane.showMessageDialog(null, "Added Successfully");
@@ -508,11 +509,11 @@ public class JFrame101 extends javax.swing.JFrame {
         // TODO add your handling code here:
         String delete = del.getText();
         for (int i = 0; i < List.list.size(); i++) {
-            if (List.getInstance().list.get(i).equals("Advisor")) {
-                if (delete.equals(List.getList().get(i).getEmailId())) {
-                    List.getList().remove(i);
-                }
+
+            if (delete.equals(List.getList().get(i).getEmailId())) {
+                List.getList().remove(i);
             }
+
         }
 
     }//GEN-LAST:event_jButton3ActionPerformed

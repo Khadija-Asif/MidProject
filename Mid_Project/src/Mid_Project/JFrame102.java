@@ -523,7 +523,8 @@ public class JFrame102 extends javax.swing.JFrame {
             viewStdTable();
         }
         for (int i = 0; i < Cm.stdlist.size(); i++) {
-            System.out.println(Cm.getStdList().get(0));
+            Student s = (Student)Cm.getStdList().get(i);
+           JOptionPane.showMessageDialog(this,s.getCroupID());
 
         }
         JOptionPane.showMessageDialog(null, "Student Added Successfully");

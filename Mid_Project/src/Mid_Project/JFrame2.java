@@ -173,6 +173,9 @@ public class JFrame2 extends javax.swing.JFrame {
                 .addGap(39, 39, 39))
         );
 
+        password.getAccessibleContext().setAccessibleDescription("Enter Login Password (admin1213)");
+        loginID.getAccessibleContext().setAccessibleDescription("Enter Login ID ( Admin)");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
