@@ -23,6 +23,7 @@ public class JFrame101 extends javax.swing.JFrame {
     public JFrame101() {
         initComponents();
         List.loadData();
+        viewTable();
     }
 
     /**
@@ -101,8 +102,8 @@ public class JFrame101 extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 507, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 135, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -415,7 +416,7 @@ public class JFrame101 extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 639, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
@@ -449,7 +450,7 @@ public class JFrame101 extends javax.swing.JFrame {
         if (check == true && check1 == true && check2 == true && check3 == true && check4 == true) {
             BasicInfo B = Ad;
             List.add(B);
-            viewTable();
+
 
         }
 
@@ -465,16 +466,16 @@ public class JFrame101 extends javax.swing.JFrame {
     public void viewTable() {
         for (int i = 0; i < List.list.size(); i++) {
             Advisor A = (Advisor) List.getList().get(i);
-            String data[] = {List.list.get(i).getName(), A.getDomain(), List.list.get(i).getEmailId(),
-                List.list.get(i).getContactNumber(), A.getWorkPlaceNumber(), List.list.get(i).getPassword()};
+            String data[] = {A.getName(), A.getDomain(), A.getEmailId(),
+                A.getContactNumber(), A.getWorkPlaceNumber(),A.getPassword()};
             DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
             Object rowData[] = new Object[6];
-            rowData[0] = List.getList().get(i).getName();
+            rowData[0] = A.getName();
             rowData[1] = A.getDomain();
-            rowData[2] = List.getList().get(i).getEmailId();
-            rowData[3] = List.getList().get(i).getContactNumber();
+            rowData[2] = A.getEmailId();
+            rowData[3] = A.getContactNumber();
             rowData[4] = A.getWorkPlaceNumber();
-            rowData[5] = List.getList().get(i).getPassword();
+            rowData[5] = A.getPassword();
             tblModel.setNumRows(i);
             tblModel.addRow(rowData);
 

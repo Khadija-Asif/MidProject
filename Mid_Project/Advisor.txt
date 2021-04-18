@@ -1,1 +1,3 @@
-Ali Hasan,Alihassan112@gmail.com,Advisor,03340657729,03340657729
+Ali Hassan,Alihassan112@gmail.com,Advisor,03340657729,04237312241,AliHassan12
+Umar Babar,UmarBabar12@gmail.com,Co Advisor,03008847460,03008847460,Babar113
+Rafaquat Ali,Rafaquat29@yahoo.com,Advisor,03364370779,03008965781,RB103

@@ -136,6 +136,7 @@ public class Studentframe extends javax.swing.JFrame {
         // TODO add your handling code here:
         NewJFrame1 j = new NewJFrame1();
         j.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

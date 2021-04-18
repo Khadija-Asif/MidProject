@@ -190,6 +190,7 @@ public class JFrame4 extends javax.swing.JFrame {
         {
             Studentframe stdF = new Studentframe();
             stdF.setVisible(true);
+            this.setVisible(false);
         }
         }
     }//GEN-LAST:event_jButton2ActionPerformed

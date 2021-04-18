@@ -5,6 +5,8 @@
  */
 package Mid_Project;
 
+import javax.swing.Action;
+
 /**
  *
  * @author KHADIJA
@@ -116,7 +118,7 @@ public class Student extends BasicInfo {
     public void setSelectedProject(String project) {
         this.selectedProject = project;
     }
-    
+
     /**
      * to get student selected project
      * @return 

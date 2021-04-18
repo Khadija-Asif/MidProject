@@ -20,6 +20,7 @@ public class JFrameAdvisor extends javax.swing.JFrame {
      */
     public JFrameAdvisor() {
         initComponents();
+
     }
 
     /**
@@ -218,7 +219,7 @@ public class JFrameAdvisor extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Group Name", " Pesentation Marks (out of 15)", "Proposal (out of 10)", "Project Output out of (30)", "Project Dissertation (out of 35)", "Log Book (out of 5)", "Workshop(out of 5)", "Total Makrs"
+                "Group ID", " Pesentation Marks (out of 15)", "Proposal (out of 10)", "Project Output out of (30)", "Project Dissertation (out of 35)", "Log Book (out of 5)", "Workshop(out of 5)", "Total Makrs"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -258,30 +259,22 @@ public class JFrameAdvisor extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         FypEvaluation fypMarks = new FypEvaluation();
-        String marks1 = j1.getText();
-        double fypMark1 = Double.parseDouble(marks1);
-        fypMarks.setPresentationMark(fypMark1);
-        String marks2 = j2.getText();
-        double fypMark2 = Double.parseDouble(marks2);
-        fypMarks.setMark(fypMark2);
-        String marks3 = j3.getText();
-        double fypMark3 = Double.parseDouble(marks3);
-        fypMarks.setOutputMark(fypMark3);
-        String marks4 = j4.getText();
-        double fypMark4 = Double.parseDouble(marks4);
-        fypMarks.setDissertationMark(fypMark4);
-        String marks5 = j5.getText();
-        double fypMark5 = Double.parseDouble(marks5);
-        fypMarks.setLogBookMark(fypMark5);
-        String mark = J6.getText();
-        double fypMark6 = Double.parseDouble(mark);
-        fypMarks.setWorkshopMark(fypMark6);
-        fypMarks.setTotal(fypMark1 + fypMark2 + fypMark3 + fypMark4 + fypMark5 + fypMark6);
+        fypMarks.setPresentationMark(j1.getText());
+        fypMarks.setMark(j2.getText());
+        fypMarks.setOutputMark(j3.getText());
+        fypMarks.setDissertationMark(j4.getText());
+        fypMarks.setLogBookMark(j5.getText());
+        fypMarks.setWorkshopMark(J6.getText());
+        int i = Integer.parseInt(fypMarks.getPresentationMark());
+        int i1 = Integer.parseInt(fypMarks.getProposalMark());
+        int i2 = Integer.parseInt(fypMarks.getOutputMarks());
+        int i3 = Integer.parseInt(fypMarks.getProjectDissertationMark());
+        int i4 = Integer.parseInt(fypMarks.getProjectLogBookMark());
+        int i5 = Integer.parseInt(fypMarks.getProjectWorkshopMark());
+        int i6 = i + i1 + i2 + i3 + i4 + i5;
+        String str = String.valueOf(i6);
+        fypMarks.setTotal(str);
         Cm.EvaluateFyp(fypMarks);
-        for (int i = 0; i < Cm.evaluationList.size(); i++) {
-            JOptionPane.showMessageDialog(this, Cm.getEvaluations().get(i).getTotal());
-
-        }
         viewEvaluationTable();
         setClear();
 
@@ -291,13 +284,14 @@ public class JFrameAdvisor extends javax.swing.JFrame {
     public void viewEvaluationTable() {
 
         for (int i = 0; i < Cm.evaluationList.size(); i++) {
-            double data[] = {Cm.getEvaluations().get(i).getPresentationMark(), Cm.getEvaluations().get(i).getProposalMark(),
+            Student std = (Student) Cm.getStdList().get(i);
+            String data[] = {std.getCroupID(), Cm.getEvaluations().get(i).getPresentationMark(), Cm.getEvaluations().get(i).getProposalMark(),
                 Cm.getEvaluations().get(i).getOutputMarks(), Cm.getEvaluations().get(i).getProjectDissertationMark(),
                 Cm.getEvaluations().get(i).getProjectLogBookMark(), Cm.getEvaluations().get(i).getProjectWorkshopMark()};
+
             DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-            
             Object rowData[] = new Object[8];
-            //rowData[0] = ;
+            rowData[0] = std.getCroupID();
             rowData[1] = Cm.getEvaluations().get(i).getPresentationMark();
             rowData[2] = Cm.getEvaluations().get(i).getProposalMark();
             rowData[3] = Cm.getEvaluations().get(i).getOutputMarks();

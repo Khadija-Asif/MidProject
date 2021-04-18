@@ -1,0 +1,3 @@
+Khadija Asif,khadija113@gmail.com,2020CS143@student.uet.edu.pk,35202-6657208-0,2020,03008444871,Female,ID-101,yoosijin11A.
+Habiba Asif,biba13@gmail.com,2020CS019@student.uet.edu.pk,35202-6572808-9,2020,03364131714,Female,ID-102,biba113
+Zaid Mujahid,Zaid15@gmail.com,2020CS150@student.uet.edu.pk,35202-6653798-3,2020,03214430902,Female,ID-103,zaid114

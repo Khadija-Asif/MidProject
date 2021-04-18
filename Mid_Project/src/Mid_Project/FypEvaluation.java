@@ -11,24 +11,24 @@ package Mid_Project;
  */
 public class FypEvaluation {
 
-    private double presentationMark;
-    private double proposalMark;
-    private double projectOutMark;
-    private double projectDissertationMark;
-    private double projectLogBookMark;
-    private double projectWorkshop;
+    private String presentationMark;
+    private String proposalMark;
+    private String projectOutMark;
+    private String projectDissertationMark;
+    private String projectLogBookMark;
+    private String projectWorkshop;
     private String Grade;
     private String remark;
     private String Effort;
     private String Status;
-    private double TotalMarks;
+    private String TotalMarks;
 
     /**
      * function to set proposal mark
      *
      * @param marks
      */
-    public void setMark(double marks) {
+    public void setMark(String marks) {
         this.proposalMark = marks;
     }
 
@@ -37,7 +37,7 @@ public class FypEvaluation {
      *
      * @param marks
      */
-    public void setPresentationMark(double marks) {
+    public void setPresentationMark(String marks) {
         this.presentationMark = marks;
     }
 
@@ -46,7 +46,7 @@ public class FypEvaluation {
      *
      * @param marks
      */
-    public void setOutputMark(double marks) {
+    public void setOutputMark(String marks) {
         this.projectOutMark = marks;
     }
 
@@ -55,7 +55,7 @@ public class FypEvaluation {
      *
      * @param marks
      */
-    public void setDissertationMark(double marks) {
+    public void setDissertationMark(String marks) {
         this.projectDissertationMark = marks;
     }
 
@@ -64,7 +64,7 @@ public class FypEvaluation {
      *
      * @param marks
      */
-    public void setLogBookMark(double marks) {
+    public void setLogBookMark(String marks) {
         this.projectLogBookMark = marks;
     }
 
@@ -73,7 +73,7 @@ public class FypEvaluation {
      *
      * @param marks
      */
-    public void setWorkshopMark(double marks) {
+    public void setWorkshopMark(String marks) {
         this.projectWorkshop = marks;
     }
 
@@ -161,7 +161,7 @@ public class FypEvaluation {
      *
      * @return
      */
-    public double getProposalMark() {
+    public String getProposalMark() {
         return this.proposalMark;
     }
 
@@ -170,7 +170,7 @@ public class FypEvaluation {
      *
      * @return
      */
-    public double getPresentationMark() {
+    public String getPresentationMark() {
         return this.presentationMark;
     }
 
@@ -179,7 +179,7 @@ public class FypEvaluation {
      *
      * @return
      */
-    public double getOutputMarks() {
+    public String getOutputMarks() {
         return this.projectOutMark;
     }
 
@@ -188,7 +188,7 @@ public class FypEvaluation {
      *
      * @return
      */
-    public double getProjectDissertationMark() {
+    public String getProjectDissertationMark() {
         return this.projectDissertationMark;
     }
 
@@ -197,7 +197,7 @@ public class FypEvaluation {
      *
      * @return
      */
-    public double getProjectLogBookMark() {
+    public String getProjectLogBookMark() {
         return this.projectLogBookMark;
     }
 
@@ -206,10 +206,10 @@ public class FypEvaluation {
      *
      * @return
      */
-    public double getProjectWorkshopMark() {
+    public String getProjectWorkshopMark() {
         return this.projectWorkshop;
     }
-    public void setter(double marks1 , double marks2 , double marks3 , double marks4 , double marks5 , double marks6,double total)
+    public void setter(String marks1 , String marks2 , String marks3 , String marks4 , String marks5 , String marks6,String total)
     {
         this.presentationMark = marks1;
         this.proposalMark = marks2;
@@ -219,15 +219,15 @@ public class FypEvaluation {
         this.projectWorkshop = marks6;
         this.TotalMarks = total;
     }
-    public void setTotal(double total)
+    public void setTotal(String total)
     {
         this.TotalMarks = total;
     }
-    public double getTotal()
+    public String getTotal()
     {
         return this.TotalMarks;
     }
-    public double getter()
+    public String getter()
     {
         return this.presentationMark + this.proposalMark + this.projectOutMark + this.projectDissertationMark + this.projectLogBookMark + this.projectWorkshop + this.TotalMarks;
     }

@@ -141,22 +141,17 @@ public class NewJFrame1 extends javax.swing.JFrame {
         String GroupID = ID.getText();
         for (int i = 0; i < Cm.stdlist.size(); i++) {
             Student std = (Student) Cm.getStdList().get(i);
-            int count = 0;
             if (GroupID.equals(std.getCroupID())) {
-                if (count < 1) {
-                    JFrameStudent1 f = new JFrameStudent1();
-                    f.setVisible(true);
-                    count = count + 1;
-                } else {
-                    JOptionPane.showMessageDialog(this, "Only 1 more Group Member is allowed");
-                }
+                JFrameStudent1 f = new JFrameStudent1(std.getCroupID());
+                f.setVisible(true);
+                this.setVisible(false);
+                } 
             }
-        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
-     * @param args the command line arguments
-     */
+         * @param args the command line arguments
+         */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

@@ -141,6 +141,7 @@ public class NewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         JFrameEvaluation J = new JFrameEvaluation();
         J.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

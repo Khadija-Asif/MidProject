@@ -9,15 +9,16 @@ package Mid_Project;
  *
  * @author KHADIJA
  */
-public class Driver{
+public class Driver {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
         JFrame1 f = new JFrame1();
         f.setVisible(true);
     }
-    
+
 }

@@ -149,6 +149,7 @@ public class NewJFrameAdvisor extends javax.swing.JFrame {
             if (GId.equals(std.getCroupID())) {
                 JFrameAdvisor j = new JFrameAdvisor();
                 j.setVisible(true);
+                this.setVisible(false);
             }
         }
 

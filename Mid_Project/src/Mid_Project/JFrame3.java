@@ -188,6 +188,7 @@ public class JFrame3 extends javax.swing.JFrame {
             if (LoginId.equals(Cm.getList().get(i).getEmailId()) && password.equals(Cm.getList().get(i).getPassword())) {
                 AdvisorFrame Af = new AdvisorFrame();
                 Af.setVisible(true);
+                this.setVisible(false);
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed

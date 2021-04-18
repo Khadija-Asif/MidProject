@@ -18,6 +18,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
      */
     public JFrameEvaluation() {
         initComponents();
+
         FypRubrics R = new FypRubrics();
         R.setProposalRubrics("Clarity Problem Statement");
         R.setDissertationRubrics("Results and Conclusion");
@@ -27,7 +28,6 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         R.setOutputRubrics("Project Outputs in the given timeline");
         Cm.rubricsList.add(R);
         FixedRubricsTable();
-        
 
     }
 
@@ -50,7 +50,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
             tblModel.addRow(rowData);
 
         }
-        
+
     }
 
     /**
@@ -83,6 +83,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         grade = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
+        jButton4 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -105,7 +106,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Project Title", "Grade", "Effort", "Remark"
+                "Grade", "Effort", "Remark"
             }
         ));
         jTable2.setRowHeight(50);
@@ -197,6 +198,13 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Grade:");
 
+        grade.setEditable(false);
+        grade.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gradeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -207,6 +215,13 @@ public class JFrameEvaluation extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        jButton4.setText("Close");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -228,7 +243,11 @@ public class JFrameEvaluation extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(grade, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(484, 484, 484))
         );
         jPanel4Layout.setVerticalGroup(
@@ -254,7 +273,9 @@ public class JFrameEvaluation extends javax.swing.JFrame {
                         .addGap(42, 42, 42)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(48, 48, 48)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(50, Short.MAX_VALUE))
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -279,21 +300,6 @@ public class JFrameEvaluation extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         FypEvaluation F = new FypEvaluation();
-        for (int i = 0; i < Cm.evaluationList.size(); i++) {
-            if (Cm.getEvaluations().get(i).getTotal() >= 80 && Cm.getEvaluations().get(i).getTotal() <= 90) {
-                F.setGrade("A");
-            }
-            if (Cm.getEvaluations().get(i).getTotal() >= 70 && Cm.getEvaluations().get(i).getTotal() < 80) {
-                F.setGrade("B+");
-            }
-            if (Cm.getEvaluations().get(i).getTotal() >= 60 && Cm.getEvaluations().get(i).getTotal() < 70) {
-                F.setGrade("B- ");
-            }
-            if(Cm.getEvaluations().get(i).getTotal() >= 50 && Cm.getEvaluations().get(i).getTotal() < 60)
-            {
-                F.setGrade("B");
-            }
-        }
         grade.setText(F.getGrade());
         F.setEffort(effort.getText());
         F.setRemark(remark.getText());
@@ -301,26 +307,47 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         ViewEvaluationTable();
 
     }//GEN-LAST:event_jButton3ActionPerformed
-    public void ViewEvaluationTable()
-    {
-         for (int i = 0; i < Cm.evaluationList.size(); i++) {
-            String data[] = {Cm.getProjectList().get(i).getprojectTitle(),Cm.getEvaluations().get(i).getGrade()
-            ,Cm.getEvaluations().get(i).getEffort(),Cm.getEvaluations().get(i).getRemark()};
+
+    private void gradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradeActionPerformed
+        // TODO add your handling code here:
+        FypEvaluation F = new FypEvaluation();
+        for (int i = 0; i < Cm.evaluationList.size(); i++) {
+            Double dr = Double.parseDouble(Cm.getEvaluations().get(i).getTotal());
+            if (dr >= 90 && dr <= 100) {
+                F.setGrade("A+");
+            } else if (dr >= 80 && dr < 90) {
+                F.setGrade("A");
+            } else if (dr >= 70 && dr < 80) {
+                F.setGrade("B+");
+            } else if (dr >= 60 && dr < 70) {
+                F.setGrade("B- ");
+            } else if (dr >= 50 && dr < 60) {
+                F.setGrade("B");
+            }
+        }
+    }//GEN-LAST:event_gradeActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_jButton4ActionPerformed
+    public void ViewEvaluationTable() {
+        for (int i = 0; i < Cm.evaluationList.size(); i++) {;
+            String data[] = {Cm.getEvaluations().get(i).getGrade(),
+                Cm.getEvaluations().get(i).getEffort(), Cm.getEvaluations().get(i).getRemark()};
             DefaultTableModel tblModel = (DefaultTableModel) jTable2.getModel();
             Object rowData[] = new Object[4];
-            rowData[0] = Cm.getProjectList().get(i).getprojectTitle();
-            rowData[1] = Cm.getEvaluations().get(i).getGrade();
-            rowData[2] = Cm.getEvaluations().get(i).getEffort();
-            rowData[3] = Cm.getEvaluations().get(i).getRemark();
-           
+            rowData[0] = Cm.getEvaluations().get(i).getGrade();
+            rowData[1] = Cm.getEvaluations().get(i).getEffort();
+            rowData[2] = Cm.getEvaluations().get(i).getRemark();
+
             tblModel.setNumRows(i);
             tblModel.addRow(rowData);
 
         }
-        
+
     }
-        
-    
+
     CommitteeManagement Cm = CommitteeManagement.getInstance();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea effort;
@@ -328,6 +355,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

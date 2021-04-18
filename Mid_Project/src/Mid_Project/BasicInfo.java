@@ -102,7 +102,7 @@ public class BasicInfo {
      * @return 
      */
     public String toString() {
-        return this.contactNumber + this.name + this.emailID;
+        return this.contactNumber + this.name + this.emailID + this.password;
     }
    
     /**
@@ -111,10 +111,11 @@ public class BasicInfo {
      * @param num
      * @param email 
      */
-    public void setter(String name, String num, String email) {
+    public void setter(String name, String num, String email , String pass) {
         this.name = name;
         this.contactNumber = num;
         this.emailID = email;
+        this.password = pass;
     }
 
 }

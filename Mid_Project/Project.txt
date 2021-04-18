@@ -1,0 +1,3 @@
+Face Detection System,Research,Project that identifies human faces in digital images.,Alihassan112@gmail.com
+Online eBook Maker System,Research,Project that is converted to a digital format to be read on any digital device,UmarBabar12@gmail.com
+E Authentication System,Entrepreneurship,Program that identifying users that request access to a system,Rafaquat29@yahoo.com
