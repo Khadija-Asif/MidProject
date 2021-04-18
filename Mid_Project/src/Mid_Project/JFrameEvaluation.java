@@ -300,8 +300,8 @@ public class JFrameEvaluation extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         FypEvaluation F = new FypEvaluation();
-        grade.setText(F.getGrade());
         F.setEffort(effort.getText());
+        grade.setText(F.getGrade());
         F.setRemark(remark.getText());
         Cm.EvaluateFyp(F);
         ViewEvaluationTable();
@@ -312,7 +312,7 @@ public class JFrameEvaluation extends javax.swing.JFrame {
         // TODO add your handling code here:
         FypEvaluation F = new FypEvaluation();
         for (int i = 0; i < Cm.evaluationList.size(); i++) {
-            Double dr = Double.parseDouble(Cm.getEvaluations().get(i).getTotal());
+            int dr = Integer.parseInt(Cm.getEvaluations().get(i).getTotal());
             if (dr >= 90 && dr <= 100) {
                 F.setGrade("A+");
             } else if (dr >= 80 && dr < 90) {

@@ -5,6 +5,7 @@
  */
 package Mid_Project;
 
+import com.sun.org.apache.xerces.internal.impl.dtd.models.CMAny;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import jdk.nashorn.internal.objects.Global;
@@ -265,17 +266,26 @@ public class JFrameAdvisor extends javax.swing.JFrame {
         fypMarks.setDissertationMark(j4.getText());
         fypMarks.setLogBookMark(j5.getText());
         fypMarks.setWorkshopMark(J6.getText());
-        int i = Integer.parseInt(fypMarks.getPresentationMark());
-        int i1 = Integer.parseInt(fypMarks.getProposalMark());
-        int i2 = Integer.parseInt(fypMarks.getOutputMarks());
-        int i3 = Integer.parseInt(fypMarks.getProjectDissertationMark());
-        int i4 = Integer.parseInt(fypMarks.getProjectLogBookMark());
-        int i5 = Integer.parseInt(fypMarks.getProjectWorkshopMark());
-        int i6 = i + i1 + i2 + i3 + i4 + i5;
-        String str = String.valueOf(i6);
-        fypMarks.setTotal(str);
-        Cm.EvaluateFyp(fypMarks);
-        viewEvaluationTable();
+        try {
+            int i = Integer.parseInt(fypMarks.getPresentationMark());
+            int i1 = Integer.parseInt(fypMarks.getProposalMark());
+            int i2 = Integer.parseInt(fypMarks.getOutputMarks());
+            int i3 = Integer.parseInt(fypMarks.getProjectDissertationMark());
+            int i4 = Integer.parseInt(fypMarks.getProjectLogBookMark());
+            int i5 = Integer.parseInt(fypMarks.getProjectWorkshopMark());
+            int i6 = i + i1 + i2 + i3 + i4 + i5;
+            String str = String.valueOf(i6);
+            fypMarks.setTotal(str);
+            Cm.EvaluateFyp(fypMarks);
+            viewEvaluationTable();
+            for(int j = 0 ; j < Cm.evaluationList.size() ; j++)
+            {
+                JOptionPane.showMessageDialog(this, Cm.getEvaluations().get(j).getTotal());
+            }
+
+        } catch (Exception e) {
+            
+        }
         setClear();
 
 
